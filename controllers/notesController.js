@@ -7,6 +7,16 @@ const renderNoteForm = (req, res) => {
 const createNewNote = async(req, res) => {
     const { title, description } = req.body;
 
+    if(title.length < 1) {
+        req.flash('error_msg', 'Title is required');
+        return res.redirect('/notes/add');
+    }
+
+    if(description < 1) {
+        req.flash('error_msg', 'Description is required');
+        return res.redirect('/notes/add');
+    }
+
     const note = new Note({title, description});
     note.user = req.user.id;
     await note.save();
