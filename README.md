@@ -1,5 +1,5 @@
 # Notes App
-Notes App is CRUD application created with Nodejs and MongoDB. It has login and user registration (Authentication) so you can get access to private routes.
+Notes App is CRUD application created with Nodejs and MongoDB. 
 
 ## Preview
 
